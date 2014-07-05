@@ -91,8 +91,7 @@ public class ConsoleShellFactory implements Factory<Command> {
         public void run() {
             String command;
             try {
-                printPreamble(consoleReader);
-                while(true) {
+                while (true) {
                     command = consoleReader.readLine("\r>", null);
                     if (command != null) {
                         if (command.equals("exit")) {
@@ -107,20 +106,6 @@ public class ConsoleShellFactory implements Factory<Command> {
             } finally {
                 callback.onExit(0);
             }
-        }
-
-        private void printPreamble(ConsoleReader consoleReader) throws IOException{
-            consoleReader.println("  _____ _____ _    _ _____");
-            consoleReader.println(" / ____/ ____| |  | |  __ \\");
-            consoleReader.println("| (___| (___ | |__| | |  | |");
-            consoleReader.println(" \\___ \\\\___ \\|  __  | |  | |");
-            consoleReader.println(" ____) |___) | |  | | |__| |");
-            consoleReader.println("|_____/_____/|_|  |_|_____/");
-            consoleReader.println("Connected to: " + Bukkit.getServer().getName());
-            consoleReader.println("- " + Bukkit.getServer().getMotd());
-            consoleReader.println();
-            consoleReader.println("Type 'exit' to exit the shell.");
-            consoleReader.println("===============================================");
         }
     }
 }

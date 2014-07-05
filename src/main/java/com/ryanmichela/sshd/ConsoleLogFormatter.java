@@ -22,7 +22,7 @@ public class ConsoleLogFormatter extends Formatter {
         StringBuilder stringbuilder = new StringBuilder();
 
         stringbuilder.append(" [");
-        stringbuilder.append(this.dateFormat.format(Long.valueOf(logrecord.getMillis()))).append(" ");
+        stringbuilder.append(this.dateFormat.format(logrecord.getMillis())).append(" ");
 
         stringbuilder.append(logrecord.getLevel().getName()).append("]: ");
         stringbuilder.append(this.formatMessage(logrecord));
