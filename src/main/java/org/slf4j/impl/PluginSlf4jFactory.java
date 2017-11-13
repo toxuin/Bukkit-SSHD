@@ -22,10 +22,7 @@ public class PluginSlf4jFactory implements ILoggerFactory {
         private String name;
 
         private boolean isEnabled(Level level) {
-            if (SshdPlugin.instance != null) {
-                return SshdPlugin.instance.getLogger().isLoggable(level);
-            }
-            return false;
+            return SshdPlugin.instance != null && SshdPlugin.instance.getLogger().isLoggable(level);
         }
 
         private void log(Level level, String s, Object[] objects) {

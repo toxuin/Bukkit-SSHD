@@ -1,5 +1,6 @@
 package com.ryanmichela.sshd;
 
+import jline.console.ConsoleReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.apache.sshd.common.Factory;
@@ -7,7 +8,6 @@ import org.apache.sshd.server.Command;
 import org.apache.sshd.server.Environment;
 import org.apache.sshd.server.ExitCallback;
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.libs.jline.console.ConsoleReader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +15,7 @@ import java.io.OutputStream;
 import java.util.logging.StreamHandler;
 
 public class ConsoleShellFactory implements Factory<Command> {
-
+    public Command get() { return this.create(); }
     public Command create() {
         return new ConsoleShell();
     }
@@ -110,12 +110,23 @@ public class ConsoleShellFactory implements Factory<Command> {
         }
 
         private void printPreamble(ConsoleReader consoleReader) throws IOException{
-            consoleReader.println("  _____ _____ _    _ _____");
-            consoleReader.println(" / ____/ ____| |  | |  __ \\");
-            consoleReader.println("| (___| (___ | |__| | |  | |");
-            consoleReader.println(" \\___ \\\\___ \\|  __  | |  | |");
-            consoleReader.println(" ____) |___) | |  | | |__| |");
-            consoleReader.println("|_____/_____/|_|  |_|_____/");
+            consoleReader.println("...................../´¯¯/)       ");
+            consoleReader.println("...RCON............,/¯.../        ");
+            consoleReader.println("..MY ASS.........../..../         ");
+            consoleReader.println(".............../´¯/'..'/´¯¯`·¸    ");
+            consoleReader.println("..........\\./'/.../..../....../¨¯ ");
+            consoleReader.println("..........('(....´...´... ¯~/'..')");
+            consoleReader.println("...........\\..............'...../ ");
+            consoleReader.println("............\\....\\.........._.·´  ");
+            consoleReader.println(".............\\..............(     ");
+            consoleReader.println("..............\\..............\\    ");
+
+            // consoleReader.println("  _____ _____ _    _ _____");
+            // consoleReader.println(" / ____/ ____| |  | |  __ \\");
+            // consoleReader.println("| (___| (___ | |__| | |  | |");
+            // consoleReader.println(" \\___ \\\\___ \\|  __  | |  | |");
+            // consoleReader.println(" ____) |___) | |  | | |__| |");
+            // consoleReader.println("|_____/_____/|_|  |_|_____/");
             consoleReader.println("Connected to: " + Bukkit.getServer().getName());
             consoleReader.println("- " + Bukkit.getServer().getMotd());
             consoleReader.println();
