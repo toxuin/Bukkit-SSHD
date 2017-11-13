@@ -42,7 +42,7 @@ public class SshdPlugin extends JavaPlugin {
         sshd.setKeyPairProvider(new SimpleGeneratorHostKeyProvider(hostKey));
         sshd.setShellFactory(new ConsoleShellFactory());
         sshd.setPasswordAuthenticator(new ConfigPasswordAuthenticator());
-        //sshd.setPublickeyAuthenticator(new PublicKeyAuthenticator(authorizedKeys));
+        sshd.setPublickeyAuthenticator(new PublicKeyAuthenticator(authorizedKeys));
         sshd.setCommandFactory(new ConsoleCommandFactory());
         try {
             sshd.start();

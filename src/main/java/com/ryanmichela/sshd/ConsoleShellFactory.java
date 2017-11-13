@@ -1,6 +1,5 @@
 package com.ryanmichela.sshd;
 
-import jline.console.ConsoleReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.apache.sshd.common.Factory;
@@ -8,6 +7,7 @@ import org.apache.sshd.server.Command;
 import org.apache.sshd.server.Environment;
 import org.apache.sshd.server.ExitCallback;
 import org.bukkit.Bukkit;
+import org.bukkit.craftbukkit.libs.jline.console.ConsoleReader;
 
 import java.io.IOException;
 import java.io.InputStream;
